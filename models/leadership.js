@@ -1,6 +1,7 @@
 /**
- *
- * Created by davidgudeman on 3/27/16.
+ * Server-side Development with NodeJS
+ * Assignment02 - leadership.js
+ * Created by David M Gudeman on 3/27/16.
  */
 // grab the things we need
 var mongoose = require('mongoose');
@@ -39,8 +40,7 @@ var leaderSchema = new Schema({
     timestamps: true
 });
 
-// the schema is useless so far
-// we need to create a model using it
+// Create a model to use the schema
 var Leaders = mongoose.model('Leader', leaderSchema);
 
 // make this available to our Node applications

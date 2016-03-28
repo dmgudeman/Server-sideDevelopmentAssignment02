@@ -1,6 +1,7 @@
 /**
- *
- * Created by davidgudeman on 3/27/16.
+ * Server-side Development with NodeJS
+ * Assignment02 - dishes.js
+ * Created by David M Gudeman on 3/27/16.
  */
 // grab the things we need
 var mongoose = require('mongoose');
@@ -48,6 +49,9 @@ var dishSchema = new Schema({
     },
     label: {
         type: String,
+        // set the default to an empty string
+        default: '',
+        // set required to false to allow default to work. Although this alone defaults to an empty String
         required: false,
         unique: true
     },
@@ -65,8 +69,7 @@ var dishSchema = new Schema({
     timestamps: true
 });
 
-// the schema is useless so far
-// we need to create a model using it
+// Create a model to use the schema
 var Dishes = mongoose.model('Dish', dishSchema);
 
 // make this available to our Node applications

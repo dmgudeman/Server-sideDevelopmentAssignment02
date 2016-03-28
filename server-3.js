@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     assert = require('assert');
 
-var Dishes = require('./models/dishes-3');
+var Dishes = require('./models/dishes');
 
 // Connection URL
 var url = 'mongodb://localhost:27017/conFusion';mongoose.connect(url);
@@ -14,6 +14,10 @@ db.once('open', function () {
     // create a new dish
     Dishes.create({
         name: 'Uthapizza',
+        image: 'images/uthapizza.png',
+        category: 'mains',
+        label: '',
+        price:'4.99',
         description: 'Test',
         comments: [
             {
